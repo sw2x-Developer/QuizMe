@@ -120,14 +120,22 @@
                 console.log("Wrong " + wrong);
             }
 
+            let today = new Date();
+  var date = today.toJSON().slice(0, 10);
+            var nDate = date.slice(8, 10) + '/' 
+                       + date.slice(5, 7) + '/' 
+                       + date.slice(0, 4);
+
             let finalResult = {
                  right,
                  wrong,
                 alltime,
-                 Attempt: localStorage.getItem("Attempt")
+                 Attempt: localStorage.getItem("Attempts"),
+                Date: nDate
             }
             let x = JSON.stringify(finalResult).toString()
             localStorage.setItem("Final", x)
+            localStorage.setItem("History" , localStorage.getItem("History") + JSON.stringify(finalResult).toString())
             location.href= "./result.html"
         }
         if(now == questions.length - 1){
