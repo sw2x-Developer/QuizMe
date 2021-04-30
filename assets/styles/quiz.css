@@ -1,0 +1,85 @@
+html {
+    overflow: hidden
+    }
+body{
+    background: url('https://cdn.discordapp.com/attachments/730341347118153728/837708332260917299/vector-seamless-pattern-question-marks-quiz-background-cartoon-yellow-161783991.jpeg');
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.box{
+    width: 75%;
+    height: 500px;
+    border-radius:15px;
+    background-color: rgb(236, 232, 232);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+
+.box h1{
+    margin: 25px;
+    font-weight: bold;
+}
+
+.box p{
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    width: 70%;
+    text-align: center;
+    font-size: 20px;
+}
+
+
+
+.radio{
+    display: flex;
+    flex-direction: row;
+    margin: 15px;
+    padding: 15px;
+    flex-wrap: wrap;
+}
+
+.radio input {
+    margin-left: 25px;
+}
+
+.box #Nxt {
+    width: 50%;
+    position: absolute;
+    left: 45%;
+    top: 85%;
+}
+
+.boxheader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    align-items:center;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/styles/quiz.css">
+    
+</head>
+<body>
+
+    <div class="container">
+        <form class="box">
+            <div class="boxheader">
+            <h1>QuizMe</h1>
+        </div>
+                <h3 id="correct">Correct Answers: </h3>
+                <h3 id="wrong">Wrong Answers: </h3>
+                <h3 id="timetable">Time for each question (in seconds): </h3>
+                <h3 id="totaltime">Total time: </h3>
+                <h3 id="Attempt">Attempt Number: </h3>
+                <h3 id="average">Average: </h3>
+               <button type="button" onClick="location.href='./index.html'" class="btn btn-outline-secondary">Go Home</button>
+        </form>
+    </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+let correct = document.getElementById("correct");
+let wrong = document.getElementById("wrong");
+let timetable = document.getElementById("timetable");
+let totaltime = document.getElementById("totaltime");
+let Attempt = document.getElementById("Attempt");
+let average = document.getElementById("average");
+
+let data = JSON.parse(localStorage.getItem("Final"));
+correct.innerHTML += data.right;
+wrong.innerHTML += data.wrong;
+timetable.innerHTML += data.alltime
+let total = 0;
+for (let i = 0; i < data.alltime.length; i++) {
+    const element = data.alltime[i];
+    total = total + element;
+}
+totaltime.innerHTML += total;
+Attempt.innerHTML += localStorage.getItem("Attempts");
+average.innerHTML += Number(total)/Number(localStorage.getItem("Attempts"));
+
+</script>
